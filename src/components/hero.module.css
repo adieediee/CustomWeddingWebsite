@@ -39,9 +39,9 @@
 
 .envelop_front,
 .envelop_back,
-.photo,
-.card,
-.flowers {
+.card_wrap,
+.photo_wrap,
+.flowers_wrap {
     grid-area: 1/1;
 }
 
@@ -56,29 +56,109 @@
     z-index: 3;
 }
 
-.envelop>.card {
-    width: min(90vw, 533px);
-    height: auto;
+/* wrappers — hold positioning, hover animates these */
+.card_wrap {
     justify-self: center;
-    position: relative;
     z-index: 1;
+    position: relative;
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.envelop>.photo {
-    /* display: none; */
-    width: min(55vw, 350px);
-    height: auto;
+.photo_wrap {
     z-index: 2;
     position: relative;
     top: min(40vw, 220px);
+    align-self: start;
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.flowers_wrap {
+    z-index: 2;
+    position: relative;
+    top: min(40vw, 220px);
+    justify-self: end;
+    align-self: start;
+    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* hover: subtle lift and slight tilt on each item */
+.envelop:hover .card_wrap {
+    transform: translateY(-7px);
+}
+
+.envelop:hover .photo_wrap {
+    transform: translateY(-10px) rotate(-2deg);
+}
+
+.envelop:hover .flowers_wrap {
+    transform: translateY(-9px) rotate(2deg);
+}
+
+/* images — GSAP controls transforms here, CSS only sets size */
+.envelop>.card {
+    width: min(90vw, 533px);
+    height: auto;
+}
+
+.envelop>.photo {
+    width: min(55vw, 350px);
+    height: auto;
     transform: rotate(-9deg);
 }
 
 .envelop>.flowers {
     width: 38%;
     height: auto;
-    position: relative;
-    top: min(40vw, 220px);
-    z-index: 2;
-    justify-self: end;
+}
+
+.card_clickable {
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+.card_clickable:hover {
+    filter: brightness(1.06);
+}
+
+.card_overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(20, 15, 10, 0.82);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+}
+
+.card_overlay_img {
+    max-height: 88vh;
+    max-width: 88vw;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    cursor: default;
+    pointer-events: none;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+.card_close {
+    position: fixed;
+    top: 24px;
+    right: 32px;
+    background: transparent;
+    border: none;
+    color: #f4efe9;
+    font-size: 28px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    line-height: 1;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.card_close:hover {
+    opacity: 1;
 }
