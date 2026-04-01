@@ -83,11 +83,10 @@ body {
 
 h2 {
   font-family: "Inria Serif";
-  font-weight: 300;
-  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 100;
+  font-size: 4rem;
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: 0.08em;
 }
 
 p {

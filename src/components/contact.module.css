@@ -10,6 +10,7 @@
 /* Title */
 .contact>h2 {
     text-align: center;
+    font-size: clamp(40px, 16vw, 142px);
     color: #4f5b55;
     font-family: "Inria Serif", serif;
 }
