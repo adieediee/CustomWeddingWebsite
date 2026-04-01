@@ -24,9 +24,11 @@ export default function Gallery() {
         // when closing (true -> false), scroll to top of this section
         if (!next) {
             requestAnimationFrame(() => {
-                galleryRef.current?.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
+                requestAnimationFrame(() => {
+                    galleryRef.current?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                    });
                 });
             });
         }
@@ -78,7 +80,7 @@ export default function Gallery() {
 
             <div className={styles.open}>
                 <button type="button" onClick={handleToggle}>
-                    {isFullHeight ? "skontrolujte menej" : "skontrolujte viac"}
+                    {isFullHeight ? "pozri menej" : "pozri viac"}
                 </button>
             </div>
         </div >

@@ -26,11 +26,11 @@
 .envelop_container {
     position: relative;
     width: 100%;
-    z-index: -1;
 }
 
 .pattern {
     position: absolute;
+    z-index: -1;
     width: max-content;
     height: auto;
     left: 50%;

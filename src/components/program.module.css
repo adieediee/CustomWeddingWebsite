@@ -23,7 +23,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: min-content;
+    width: 140px;
     position: relative;
     font-size: 1.2rem;
 }
@@ -43,7 +43,7 @@
 }
 
 .description {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
 }
 
 .point>.time {
@@ -105,6 +105,6 @@
     }
 
     .description {
-        width: 120px;
+        width: 160px;
     }
 }
