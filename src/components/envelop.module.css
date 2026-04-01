@@ -1,0 +1,165 @@
+@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
+
+.envelop {
+    display: flex;
+    width: min(100%, 880px);
+    aspect-ratio: 97/61;
+    padding: 50px;
+    margin: min(10vh, 100px) auto;
+    gap: 20px;
+    position: relative;
+    overflow: visible;
+    background-image: url("/contact/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#textarea {
+    background-color: transparent;
+    resize: none;
+    outline: none;
+    border: none;
+    width: calc(100% - 40px);
+    padding: 30px 20px;
+    font-family: "Homemade Apple";
+    font-size: 20px;
+    line-height: 40px;
+}
+
+.line {
+    background-color: black;
+    height: auto;
+    margin: 30px 0;
+    width: 1px;
+}
+
+.info {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+}
+
+.info>.stamp {
+    align-self: flex-end;
+    width: 110px;
+    aspect-ratio: 1/1;
+    border: 1px solid black;
+    position: relative;
+    margin: 40px;
+    margin-bottom: 80px;
+}
+
+.info>.stamp>img {
+    position: absolute;
+    height: 137px;
+    width: auto;
+    inset: -10px 0 0 -50px;
+    rotate: 15deg;
+}
+
+
+.info_text {
+    display: flex;
+    flex-direction: column;
+}
+
+.info_text>label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    height: 30px;
+}
+
+.info_text>label>input {
+    width: 100%;
+    border: none;
+
+    background-image: repeating-linear-gradient(to bottom,
+            transparent 0,
+            transparent 30px,
+            #000 30px,
+            #000 31px);
+
+
+    font-size: 18px;
+    padding-top: 4px;
+    background-color: transparent;
+    font-family: "Homemade Apple";
+    overflow: visible;
+    color: #b60000;
+}
+
+.info_text>input[type="submit"] {
+    margin: 50px auto 30px auto;
+    width: fit-content;
+    border: 0;
+    border-radius: 100px;
+    outline: none;
+    padding: 8px 50px;
+    background-color: #b60000;
+    color: #f4efe9;
+    font-size: 20px;
+    font-family: "Abramo Regular", serif;
+    font-weight: 1000;
+}
+
+@media (max-width: 1024px) {
+    .envelop {
+        flex-direction: column;
+        background-image: url("/contact/background.png");
+        padding: 40px;
+        aspect-ratio: unset;
+    }
+
+    #textarea {
+        width: calc(100% - 10px);
+        aspect-ratio: 1/1;
+        padding: 30px 20px;
+        font-family: "Homemade Apple";
+        font-size: 20px;
+        line-height: 40px;
+        word-spacing: 10px;
+    }
+
+
+    .info {
+        width: 100%;
+        flex-direction: row-reverse;
+    }
+
+    .info>.stamp {
+        width: 70px;
+        margin: 10px 0 0 40px;
+        align-self: flex-start;
+    }
+
+    .info>.stamp>img {
+        height: 77px;
+        margin-left: 20px;
+    }
+
+    .info_text {
+        width: 100%;
+        padding-bottom: 100px;
+        margin-top: 10px;
+    }
+
+    .info_text>input[type="submit"] {
+        margin: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 100px;
+    }
+
+    .line {
+        height: 1px;
+        margin: 0 10px;
+        width: auto;
+    }
+
+}

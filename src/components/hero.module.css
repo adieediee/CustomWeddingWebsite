@@ -1,0 +1,84 @@
+.hero {
+    display: grid;
+    overflow: hidden;
+    width: 100vw;
+}
+
+.background,
+.envelop {
+    grid-area: 1/1;
+}
+
+.names {
+    color: var(--beige);
+    font-size: 290px;
+    font-size: clamp(100px, 15vw, 290px);
+    font-family: "Abramo Script", cursive;
+    display: block;
+    line-height: 50vh;
+    user-select: none;
+    grid-area: 1/1;
+}
+
+.katka {
+    text-align: left;
+    transform: translate(10%, 20%);
+}
+
+.jaro {
+    text-align: right;
+    transform: translate(-10%, -20%);
+}
+
+.envelop {
+    display: grid;
+    z-index: 1;
+    margin: auto;
+    width: min(700px, 90vw);
+}
+
+.envelop_front,
+.envelop_back,
+.photo,
+.card,
+.flowers {
+    grid-area: 1/1;
+}
+
+.envelop_front,
+.envelop_back {
+    width: 100%;
+    height: auto;
+}
+
+.envelop_front {
+    align-self: end;
+    z-index: 3;
+}
+
+.envelop>.card {
+    width: min(90vw, 533px);
+    height: auto;
+    justify-self: center;
+    position: relative;
+    z-index: 1;
+}
+
+.envelop>.photo {
+    /* display: none; */
+    width: min(55vw, 350px);
+    height: auto;
+    z-index: 2;
+    position: relative;
+    top: min(40vw, 220px);
+    transform: rotate(-9deg);
+}
+
+.envelop>.flowers {
+    width: 38%;
+    height: auto;
+    position: relative;
+    top: min(40vw, 220px);
+    z-index: 2;
+    justify-self: end;
+}

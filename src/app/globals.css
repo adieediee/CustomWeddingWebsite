@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "Abramo Regular";
+  src: url("/fonts/Abramo%20Regular.woff2") format("woff2");
+  /* font-family: "Abramo Regular", serif; */
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Abramo Script";
+  src: url("/fonts/Abramo%20Script.woff2") format("woff2");
+  /* font-family: "Abramo Script", cursive; */
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inria Serif";
+  src: url("/fonts/Inria_Serif/InriaSerif-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inria Serif";
+  src: url("/fonts/Inria_Serif/InriaSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inria Serif";
+  src: url("/fonts/Inria_Serif/InriaSerif-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inria Serif";
+  src: url("/fonts/Inria_Serif/InriaSerif-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inria Serif";
+  src: url("/fonts/Inria_Serif/InriaSerif-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inria Serif";
+  src: url("/fonts/Inria_Serif/InriaSerif-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --green: #4F5B55;
+  --beige: #e4dcce;
+  --text-size: clamp(16px, 1.5vw, 80px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+h2 {
+  font-family: "Inria Serif";
+  font-weight: 100;
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+p {
+  font-family: "Inria Serif";
+  font-weight: 100;
+  font-size: 1.2rem;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(-1deg, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 80%);
+}

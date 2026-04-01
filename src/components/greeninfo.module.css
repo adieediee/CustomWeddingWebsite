@@ -1,0 +1,59 @@
+.greenInfo {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--green);
+    color: var(--beige);
+    gap: 20px;
+    padding: 60px 0;
+    scroll-snap-align: start;
+}
+
+.greenInfo>.three {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: min(100%, 800px);
+    margin: auto;
+    margin-top: 40px;
+}
+
+.greenInfo>.three>.contact {
+    font-family: "Abramo Regular", serif;
+    font-size: 50px;
+}
+
+.greenInfo>.three>.us {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.greenInfo>.three>.nice {
+    font-family: "Abramo Script", cursive;
+    font-size: 60px;
+    line-height: 70px;
+    transform: rotate(-9deg) translateX(5px);
+}
+
+@media (max-width: 1024px) {
+    .break {
+        display: none;
+    }
+
+    .greenInfo>p {
+        padding: 0 20px;
+    }
+
+    .greenInfo>.three {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .greenInfo>h2 {
+        font-weight: 1000;
+    }
+
+    .greenInfo>.three>.nice {
+        transform: rotate(-9deg) translateX(5px) translateY(5px);
+    }
+}

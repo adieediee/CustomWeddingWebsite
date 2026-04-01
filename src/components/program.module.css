@@ -1,0 +1,111 @@
+.program {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--green);
+    overflow-x: hidden;
+    padding: 40px 0;
+    min-height: 100vh;
+    scroll-snap-align: start;
+}
+
+.plan {
+    display: flex;
+    justify-content: space-around;
+    border-top: 1px solid black;
+    width: min(80%, 1100px);
+    margin: 120px 0 80px 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+.point {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: min-content;
+    position: relative;
+    font-size: 16px;
+}
+
+.point>.line {
+    width: 1px;
+    height: 50px;
+    border: 1px solid var(--green);
+    transform: translateY(-50%);
+}
+
+.vector {
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+    margin: -20px 0 10px 0;
+}
+
+.description {
+    font-size: 0.8rem;
+}
+
+.point>.time {
+    position: absolute;
+    top: -75px;
+    font-size: 34px;
+}
+
+.countdown {
+    text-align: center;
+    margin-top: 20px;
+    font-size: max(26px, 2vw);
+}
+
+@media (max-width: 1024px) {
+    .plan {
+        flex-direction: column;
+        border-top: none;
+        border-left: 1px solid black;
+        margin: 40px 0 40px 250px;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .point {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .point>.line {
+        width: 50px;
+        height: 2px;
+        border: 1px solid var(--green);
+        transform: translateY(0%) translateX(-50%);
+    }
+
+    .point>.time {
+        position: absolute;
+        top: 50%;
+        left: -120px;
+        transform: translateY(-50%);
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+    }
+
+
+    .vector {
+        height: 100px;
+        width: 100px;
+        object-fit: contain;
+        margin: 0;
+
+    }
+
+    .description {
+        width: 120px;
+    }
+}
