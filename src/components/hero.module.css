@@ -1,3 +1,4 @@
+/* ── HERO SECTION ───────────────────────────────────────────── */
 .hero {
     display: grid;
     overflow: hidden;
@@ -11,7 +12,6 @@
 
 .names {
     color: var(--beige);
-    font-size: 290px;
     font-size: clamp(100px, 15vw, 290px);
     font-family: "Abramo Script", cursive;
     display: block;
@@ -30,6 +30,7 @@
     transform: translate(-10%, -20%);
 }
 
+/* ── ENVELOPE CONTAINER ─────────────────────────────────────── */
 .envelop {
     display: grid;
     z-index: 1;
@@ -37,6 +38,7 @@
     width: min(700px, 90vw);
 }
 
+/* all items stack in the same grid cell */
 .envelop_front,
 .envelop_back,
 .card_wrap,
@@ -45,8 +47,8 @@
     grid-area: 1/1;
 }
 
-.envelop_front,
-.envelop_back {
+.envelop_back,
+.envelop_front {
     width: 100%;
     height: auto;
 }
@@ -56,12 +58,14 @@
     z-index: 3;
 }
 
-/* wrappers — hold positioning, hover animates these */
+/* ── HOVER WRAPPERS (desktop only) ──────────────────────────── */
+/* wrappers hold the grid positioning — CSS hover animates these */
+/* GSAP animates the img inside — no conflict                    */
+
 .card_wrap {
     justify-self: center;
     z-index: 1;
     position: relative;
-    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .photo_wrap {
@@ -69,7 +73,6 @@
     position: relative;
     top: min(40vw, 220px);
     align-self: start;
-    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .flowers_wrap {
@@ -78,53 +81,58 @@
     top: min(40vw, 220px);
     justify-self: end;
     align-self: start;
-    transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* hover: subtle lift and slight tilt on each item */
-.envelop:hover .card_wrap {
-    transform: translateY(-7px);
+/* hover only on devices that actually support hover (not touch) */
+@media (hover: hover) {
+    .card_wrap,
+    .photo_wrap,
+    .flowers_wrap {
+        transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .envelop:hover .card_wrap {
+        transform: translateY(-7px);
+    }
+
+    .envelop:hover .photo_wrap {
+        transform: translateY(-10px) rotate(-2deg);
+    }
+
+    .envelop:hover .flowers_wrap {
+        transform: translateY(-9px) rotate(2deg);
+    }
 }
 
-.envelop:hover .photo_wrap {
-    transform: translateY(-10px) rotate(-2deg);
-}
-
-.envelop:hover .flowers_wrap {
-    transform: translateY(-9px) rotate(2deg);
-}
-
-/* images — GSAP controls transforms here, CSS only sets size */
-.envelop>.card {
+/* ── IMAGES — GSAP controls transforms, CSS only sets size ──── */
+.card_wrap .card {
     width: min(90vw, 533px);
     height: auto;
+    cursor: pointer;
+    transition: filter 0.2s ease;
 }
 
-.envelop>.photo {
+.card_wrap .card:hover {
+    filter: brightness(1.06);
+}
+
+.photo_wrap .photo {
     width: min(55vw, 350px);
     height: auto;
     transform: rotate(-9deg);
 }
 
-.envelop>.flowers {
-    width: 38%;
+.flowers_wrap .flowers {
+    width: min(266px, 34vw);
     height: auto;
 }
 
-.card_clickable {
-    cursor: pointer;
-    transition: filter 0.2s ease;
-}
-
-.card_clickable:hover {
-    filter: brightness(1.06);
-}
-
-.card_overlay {
+/* ── FULLSCREEN OVERLAY ─────────────────────────────────────── */
+.overlay {
     position: fixed;
     inset: 0;
     z-index: 1000;
-    background: rgba(20, 15, 10, 0.82);
+    background: rgba(20, 15, 10, 0.85);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,18 +140,16 @@
     backdrop-filter: blur(4px);
 }
 
-.card_overlay_img {
-    max-height: 88vh;
-    max-width: 88vw;
-    width: auto;
+.overlay_img {
+    width: min(90vw, 720px);
     height: auto;
+    max-height: 90vh;
     object-fit: contain;
-    cursor: default;
     pointer-events: none;
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
 }
 
-.card_close {
+.overlay_close {
     position: fixed;
     top: 24px;
     right: 32px;
@@ -159,6 +165,22 @@
     z-index: 1001;
 }
 
-.card_close:hover {
+.overlay_close:hover {
     opacity: 1;
+}
+
+/* ── MOBILE ─────────────────────────────────────────────────── */
+/* On mobile: wrappers are layout-neutral, no transforms, no hover */
+/* Result is identical to the clean no-animation version           */
+@media (max-width: 900px) {
+    .hero {
+        overflow: hidden;
+    }
+
+    .card_wrap,
+    .photo_wrap,
+    .flowers_wrap {
+        transform: none;
+        transition: none;
+    }
 }
