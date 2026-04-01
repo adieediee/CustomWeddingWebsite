@@ -10,7 +10,6 @@
 /* Title */
 .contact>h2 {
     text-align: center;
-    font-size: clamp(40px, 16vw, 142px);
     color: #4f5b55;
     font-family: "Inria Serif", serif;
 }
@@ -18,9 +17,9 @@
 .contact>p {
     text-align: center;
     margin: 10px;
-    font-size: clamp(12px, 4vw, 35px);
+    font-size: 1.2rem;
     color: #4f5b55;
-    font-family: "Forum";
+    font-family: "Inria Serif", serif;
 }
 
 /* Background pattern */

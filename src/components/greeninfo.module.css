@@ -20,11 +20,11 @@
 
 .greenInfo>.three>.contact {
     font-family: "Inria Serif", serif;
-    font-size: 50px;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .greenInfo>.three>.us {
-    font-size: 20px;
+    font-size: 1.2rem;
     line-height: 24px;
 }
 
@@ -49,9 +49,6 @@
         gap: 20px;
     }
 
-    .greenInfo>h2 {
-        font-weight: 1000;
-    }
 
     .greenInfo>.three>.nice {
         transform: rotate(-9deg) translateX(5px) translateY(5px);
