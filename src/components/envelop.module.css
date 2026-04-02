@@ -119,6 +119,18 @@
     font-weight: 1000;
 }
 
+.info_text>input[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.status {
+    min-height: 24px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: #7a1414;
+}
+
 @media (max-width: 1024px) {
     .envelop {
         flex-direction: column;
