@@ -38,6 +38,7 @@
 .vector {
     height: 80px;
     width: 80px;
+    aspect-ratio: 1/1;
     object-fit: contain;
     margin: -20px 0 10px 0;
 }
@@ -98,7 +99,7 @@
 
     .vector {
         height: 100px;
-        width: 100px;
+        height: 100px;
         object-fit: contain;
         margin: 0;
 

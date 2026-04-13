@@ -3,6 +3,7 @@
     display: grid;
     overflow: hidden;
     width: 100vw;
+    margin-bottom: 40px;
 }
 
 .background,
@@ -85,6 +86,7 @@
 
 /* hover only on devices that actually support hover (not touch) */
 @media (hover: hover) {
+
     .card_wrap,
     .photo_wrap,
     .flowers_wrap {

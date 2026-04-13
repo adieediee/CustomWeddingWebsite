@@ -8,7 +8,7 @@
 }
 
 .jaroDelay {
-    animation-delay: 1.2s;
+    animation-delay: 0.6s;
 }
 
 .envelopStart {
@@ -19,17 +19,7 @@
 .envelopLanding {
     animation: envelopeLanding 1500ms cubic-bezier(0.22, 0.8, 0.36, 1) forwards;
 
-    animation-delay: 2.4s;
-}
-
-.cardOpen {
-    transform: translateX(-50%) translateY(50px) scale(1.8) rotate(-3deg);
-    z-index: 10;
-}
-
-.cardMiddle {
-    transform: translateX(-50%) translateY(-350px) scale(1.2) rotate(-3deg);
-    z-index: 10;
+    animation-delay: 1.8s;
 }
 
 @keyframes drawName {
@@ -66,13 +56,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-
     .scriptNameAnimate,
     .envelopLanding,
-    .cardOpen {
-        animation: none;
-        transition: none;
-    }
 
     .scriptNameBase {
         opacity: 1;

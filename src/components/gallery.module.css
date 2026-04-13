@@ -3,8 +3,7 @@
   color: var(--beige);
   overflow: hidden;
   padding: 60px 0;
-  height: 80vh;
-  max-height: 100vh;
+  height: 90vh;
   position: relative;
 }
 
@@ -16,60 +15,63 @@
 }
 
 .photos {
-  width: fit-content;
+  width: min-content;
   display: flex;
-  margin: auto;
-  transform: translateX(-105px);
-  padding: 60px 0 0 0;
+  padding: 60px 0 60px 0;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-52%);
 }
 
-.photos > img {
-  width: 325px;
+.photos>img {
+  width: calc(100vw / 5);
+  max-width: 350px;
   height: auto;
   margin-right: -60px;
 }
 
-.photos > img:nth-child(1) {
+.photos>img:nth-child(1) {
   position: relative;
   transform: rotate(-15deg);
   z-index: 2;
 }
 
-.photos > img:nth-child(2) {
+.photos>img:nth-child(2) {
   position: relative;
   transform: rotate(15deg);
   z-index: 1;
   bottom: -58px;
 }
 
-.photos > img:nth-child(3) {
+.photos>img:nth-child(3) {
   position: relative;
   transform: rotate(-10deg);
   z-index: 2;
   bottom: -5px;
 }
 
-.photos > img:nth-child(4) {
+.photos>img:nth-child(4) {
   position: relative;
   z-index: 3;
   bottom: -55px;
 }
 
-.photos > img:nth-child(5) {
+.photos>img:nth-child(5) {
   position: relative;
   transform: rotate(10deg);
   z-index: 4;
   bottom: 10px;
 }
 
-.photos > img:nth-child(6) {
+.photos>img:nth-child(6) {
   position: relative;
   transform: rotate(2deg);
   z-index: 5;
   bottom: -70px;
 }
 
-.photos > img:nth-child(7) {
+.photos>img:nth-child(7) {
   position: relative;
   transform: rotate(15deg);
   z-index: 6;
@@ -91,7 +93,7 @@
     transform: translateX(0);
   }
 
-  .photos > img {
+  .photos>img {
     position: relative;
     transform: rotate(0deg) !important;
     bottom: 0 !important;
@@ -104,11 +106,9 @@
     position: absolute;
     bottom: 0;
     z-index: 10;
-    background: linear-gradient(
-      -1deg,
-      rgba(0, 0, 0, 1) 10%,
-      rgba(255, 255, 255, 0) 80%
-    );
+    background: linear-gradient(-1deg,
+        rgba(0, 0, 0, 1) 10%,
+        rgba(255, 255, 255, 0) 80%);
     width: 100%;
     height: 140px;
     display: flex;
@@ -116,7 +116,7 @@
     align-items: center;
   }
 
-  .open > button {
+  .open>button {
     font-size: 14px;
     margin-top: 40px;
     outline: none;
@@ -125,6 +125,7 @@
     border-radius: 100px;
     padding: 10px 20px;
     background-color: transparent;
+    z-index: 10;
   }
 
   .galleryFull .open {
@@ -134,7 +135,7 @@
     padding-top: 24px;
   }
 
-  .galleryFull .open > button {
+  .galleryFull .open>button {
     margin-top: 0;
   }
 }
