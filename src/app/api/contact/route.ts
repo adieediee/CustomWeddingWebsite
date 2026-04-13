@@ -16,6 +16,10 @@ function missingEnvVar(): string | null {
     return null;
 }
 
+function getEnv(key: string): string | undefined {
+    return process.env[key];
+}
+
 export const runtime = "nodejs";
 
 export async function POST(request: Request) {
@@ -52,28 +56,28 @@ export async function POST(request: Request) {
         );
     }
 
-    const smtpPort = Number(process.env.SMTP_PORT);
+    const smtpPort = Number(getEnv("SMTP_PORT"));
     if (!Number.isFinite(smtpPort)) {
         return NextResponse.json({ error: "SMTP_PORT must be a number." }, { status: 500 });
     }
 
     const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
+        host: getEnv("SMTP_HOST"),
         port: smtpPort,
         secure: smtpPort === 465,
         auth: {
-            user: process.env.SMTP_USER,
-            pass: process.env.SMTP_PASS,
+            user: getEnv("SMTP_USER"),
+            pass: getEnv("SMTP_PASS"),
         },
     });
 
     try {
         await transporter.sendMail({
-            from: process.env.MAIL_FROM ?? process.env.SMTP_USER,
-            to: process.env.MAIL_TO,
+            from: getEnv("MAIL_FROM") ?? getEnv("SMTP_USER"),
+            to: getEnv("MAIL_TO"),
             subject: `Svadobny odkaz od: ${od}`,
             text: `OD: ${od}\n\nODKAZ:\n${message}`,
-            replyTo: process.env.MAIL_FROM ?? process.env.SMTP_USER,
+            replyTo: getEnv("MAIL_FROM") ?? getEnv("SMTP_USER"),
         });
 
         return NextResponse.json({ ok: true });
