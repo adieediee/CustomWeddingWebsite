@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "./weddingdate.module.css";
 import { getSlovakUnit } from "@/lib/weddingCountdown";
 
-import sign from "../../public/date/sign2.png";
+import sign from "../../public/date/sign4.png";
 
 type WeddingDateProps = {
     targetDateIso: string;

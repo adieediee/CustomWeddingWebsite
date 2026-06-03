@@ -6,6 +6,7 @@ import { formatCountdownSlovak } from "@/lib/weddingCountdown";
 import { useWeddingCountdown } from "@/hooks/useWeddingCountdown";
 
 import bus from "../../public/program/bus.png";
+import car from "../../public/program/car.png";
 import church from "../../public/program/church.png";
 import rings from "../../public/program/rings.png";
 import camera from "../../public/program/camera.png";
@@ -23,16 +24,16 @@ export default function Program({ targetDateIso }: ProgramProps) {
             <h2>Program</h2>
             <div className={styles.plan}>
                 <div className={styles.point}>
-                    <p className={styles.time}>13:45</p>
+                    <p className={styles.time}>13:30</p>
                     <span className={styles.line}></span>
                     <div className={styles.info}>
-                        <Image src={bus} alt="bus" className={styles.vector}></Image>
-                        <p className={styles.description}>Odchod autobusu z Hruštína spred Jarkovho domu</p>
+                        <Image src={car} alt="car" className={styles.vector}></Image>
+                        <p className={styles.description}>Odchod z Hruštína</p>
                     </div>
                 </div>
 
                 <div className={styles.point}>
-                    <p className={styles.time}>14:30</p>
+                    <p className={styles.time}>14:20</p>
                     <span className={styles.line}></span>
                     <div className={styles.info}>
                         <Image src={church} alt="church" className={styles.vector}></Image>
