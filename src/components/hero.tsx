@@ -149,7 +149,7 @@ export default function Hero() {
                     <span
                         className={`${styles.names} ${styles.jaro} ${animationStyles.scriptNameBase} ${animationStyles.scriptNameAnimate} ${animationStyles.jaroDelay}`}
                     >
-                        Jaro
+                        Jarko
                     </span>
                 </div>
 
